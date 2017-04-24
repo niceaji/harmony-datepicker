@@ -1,7 +1,7 @@
 {
   "name": "harmony-datapicker",
   "version": "1.0.0",
-  "description": "",
+  "description": "> bootstarp-datepicker + timepicker",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp default",
@@ -17,5 +17,15 @@
     "gulp-connect": "^5.0.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.1.2"
-  }
+  },
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niceaji/harmony-datepicker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niceaji/harmony-datepicker/issues"
+  },
+  "homepage": "https://github.com/niceaji/harmony-datepicker#readme"
 }
