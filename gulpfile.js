@@ -13,13 +13,13 @@ gulp.task('js', function () {
     './src/index.js'
   ];
 
-  let filename = 'datepicker.min.js';
+  let filename = 'harmony.datepicker.min.js';
   let dist = './dist';
 
   return gulp.src(sources)
     .pipe(sourcemaps.init())
     .pipe(concat(filename))
-    .pipe(uglify())
+    .pipe(uglify({compress: {drop_debugger: false}}))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(dist));
 });
@@ -27,12 +27,11 @@ gulp.task('js', function () {
 
 gulp.task('css', function () {
   let sources = [
-    './src/bootstrap-datepicker/bootstrap-datepicker.css',
     './src/bootstrap-datepicker/bootstrap-datepicker.standalone.css',
     './src/index.css'
   ];
 
-  let filename = 'datepicker.min.css';
+  let filename = 'harmony.datepicker.min.css';
   let dist = './dist';
 
   return gulp.src(sources)
