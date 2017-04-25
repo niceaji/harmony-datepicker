@@ -3,28 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <title>Datepicker Demo</title>
-  <link rel="stylesheet" href="./datepicker.min.css">
-  <style>
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-  </style>
+  <link rel="stylesheet" href="./harmony.css">
+  <link rel="stylesheet" href="./harmony.datepicker.min.css">
 </head>
 <body>
 
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .container > div{
+    padding-top: 50px;
+  }
+  .dev a{
+    display: block;
+  }
+</style>
 <div class="container">
-  <h2>test 1</h2>
 
-  <input type="text" id="test1">
+  <div class="dev">
+    <h2>JS,CSS</h2>
+    <ul>
+      <li>
+        <a href="harmony.datepicker.min.css">harmony.datepicker.min.css</a>
+      </li>
+      <li>
+        <a href="harmony.datepicker.min.js">harmony.datepicker.min.js</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div>
+    <h3>date+time picker</h3>
+
+    <div id="harmonyDatepicker1" class="wrap_calendar">
+      <div class="opt_harmony ymd">
+        <strong class="screen_out">날짜 선택상자</strong>
+        <span class="screen_out">선택내용 :</span>
+        <a class="num_g btn_selected"></a>
+      </div>
+      <div class="opt_harmony opt_time hour ">
+        <strong class="screen_out">시 선택상자</strong>
+        <span class="screen_out">선택내용 :</span>
+        <a class="num_g btn_selected "></a>
+        <em class="screen_out">선택옵션</em>
+        <ul class="list_opt"></ul>
+      </div>
+      <div class="opt_harmony opt_time minute">
+        <strong class="screen_out">분 선택상자</strong>
+        <span class="screen_out">선택내용 :</span>
+        <a class="num_g btn_selected minute"></a>
+        <em class="screen_out">선택옵션</em>
+        <ul class="list_opt"></ul>
+      </div>
+    </div>
+  </div>
+
+  
+  <div>
+    <h3>datepicker</h3>
+    <div id="harmonyDatepicker2" class="wrap_calendar">
+      <div class="opt_harmony ymd">
+        <strong class="screen_out">날짜 선택상자</strong>
+        <span class="screen_out">선택내용 :</span>
+        <a class="num_g btn_selected"></a>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3>datapicker input</h3>
+
+    <div id="harmonyDatepicker3" >
+      <input type="text"  />
+    </div>
+
+  </div>
+  <div>
+    <h3>datapicker range</h3>
+
+    <div id="harmonyDatepicker4" class="input-daterange">
+      <input type="text" name="start" /> ~
+      <input type="text" name="end" />
+    </div>
+
+   </div>
 </div>
 
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 <!--<script src="//m1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.9.1.js"></script>-->
 
-<script src="./datepicker.min.js"></script>
+<script src="./harmony.datepicker.min.js"></script>
 
 <script src="./demo.js"></script>
+
+
+
+
+
+
+
+
+<a href="https://github.com/niceaji/harmony-datepicker"><img style="position: absolute; top: 0; right: 0; border: 0;"
+                                                             src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+                                                             alt="Fork me on GitHub"
+                                                             data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
 </body>
 </html>

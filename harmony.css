@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+/* http://html.gt.dev.daum.net/kakaoharmony-2017/service/_css/common.css */
+
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li{list-style:none}
+blockquote, q{quotes: none}
+blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+input,select,textarea,button{vertical-align:middle}
+input::-ms-clear{display:none}
+button{border:0 none;background-color:transparent;cursor:pointer}
+body{background:#fff}
+body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'Noto Sans regular', 'Malgun gothic', '맑은 고딕', sans-serif;color:#000}
+a{color:#000;text-decoration:none}
+a:active, a:hover{text-decoration:underline}
+a:active{background-color:transparent}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+
+
+body {
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: 'Noto Sans regular', 'Malgun gothic', '맑은 고딕', sans-serif;
+    color: #000;
+}
+
+.opt_harmony .btn_selected {
+    display: block;
+    padding: 7px 40px 7px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+.opt_harmony {
+    position: relative;
+    border: 1px solid #eceeee;
+    border-radius: 34px;
+    background-color: #fff;
+}
+.list_opt {
+    display: none;
+    position: absolute;
+    top: 41px;
+    left: 1px;
+    z-index: 1000;
+    padding: 10px 0;
+    border: 1px solid #dbddde;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.screen_out {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+.num_g {
+    font-family: 'roboto', helvetica, sans-serif;
+
+}
+.list_opt {
+    display: none;
+    position: absolute;
+    top: 41px;
+    left: 1px;
+    z-index: 1000;
+    padding: 10px 0;
+    border: 1px solid #dbddde;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.opt_harmony.on .list_opt {
+    display: block;
+    top: 36px;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 58px;
+    height: 198px;
+}
+.list_opt .link_option {
+    display: block;
+    width: 88px;
+    height: 33px;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 33px;
+    cursor: pointer;
+}
+.wrap_calendar .list_opt .link_option {
+    width: 58px;
+    padding: 0;
+}
+.list_opt .link_option:hover {
+    background-color: #f4f5f5;
+    text-decoration: none;
+}
+
+.wrap_calendar{display:block;margin-top:15px}
+/*.wrap_calendar{display:none;float:right}*/
+.wrap_calendar .opt_harmony{float:left;margin-left:10px;border-color:#d3dae3;border-radius:2px;text-align:center}
+.opt_harmony.on .list_opt{display:block;top:36px;left:0;overflow-x:hidden;overflow-y:auto;width:58px;height:198px}
+.opt_harmony.on .box_calendar{display:block}
+.wrap_calendar .opt_harmony .btn_selected{width:112px;height:32px;padding:0;line-height:32px}
+.wrap_calendar .opt_time .btn_selected{width:58px}
+.wrap_calendar .list_opt .link_option{width:58px;padding:0}
+
+
+
