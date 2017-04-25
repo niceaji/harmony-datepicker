@@ -42,7 +42,7 @@ gulp.task('css', function () {
 
 gulp.task('connect', function () {
   connect.server({
-    root: 'dist',
+    root: '.',
     livereload: true,
     port: 5000
   });

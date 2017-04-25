@@ -4,14 +4,95 @@
   <meta charset="UTF-8">
   <title>Datepicker Demo</title>
   <link rel="stylesheet" href="./harmony.css">
-  <link rel="stylesheet" href="../src/bootstrap-datepicker/bootstrap-datepicker.css">
   <link rel="stylesheet" href="../src/bootstrap-datepicker/bootstrap-datepicker.standalone.css">
   <link rel="stylesheet" href="../src/index.css">
 </head>
 <body>
 
 
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .container > div{
+    padding-top: 50px;
+  }
+  .dev a{
+    display: block;
+  }
+</style>
+<div class="container">
 
+  <div class="dev">
+    <h2>JS,CSS</h2>
+    <ul>
+      <li>
+        <a href="harmony.datepicker.min.css">harmony.datepicker.min.css</a>
+      </li>
+      <li>
+        <a href="harmony.datepicker.min.js">harmony.datepicker.min.js</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <div>
+    <h3>date+time picker</h3>
+
+    <div id="harmonyDatepicker1" class="wrap_calendar">
+      <div class="opt_harmony ymd">
+        <strong class="screen_out">날짜 선택상자</strong>
+        <span class="screen_out">선택내용 :</span>
+        <a class="num_g btn_selected"></a>
+      </div>
+      <div class="opt_harmony opt_time hour ">
+        <strong class="screen_out">시 선택상자</strong>
+        <span class="screen_out">선택내용 :</span>
+        <a class="num_g btn_selected "></a>
+        <em class="screen_out">선택옵션</em>
+        <ul class="list_opt"></ul>
+      </div>
+      <div class="opt_harmony opt_time minute">
+        <strong class="screen_out">분 선택상자</strong>
+        <span class="screen_out">선택내용 :</span>
+        <a class="num_g btn_selected minute"></a>
+        <em class="screen_out">선택옵션</em>
+        <ul class="list_opt"></ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+    <h3>datepicker</h3>
+    <div id="harmonyDatepicker2" class="wrap_calendar">
+      <div class="opt_harmony ymd">
+        <strong class="screen_out">날짜 선택상자</strong>
+        <span class="screen_out">선택내용 :</span>
+        <a class="num_g btn_selected"></a>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3>datapicker input</h3>
+
+    <div id="harmonyDatepicker3" >
+      <input type="text"  />
+    </div>
+
+  </div>
+  <div>
+    <h3>datapicker range</h3>
+
+    <div id="harmonyDatepicker4" class="input-daterange">
+      <input type="text" name="start" /> ~
+      <input type="text" name="end" />
+    </div>
+
+  </div>
+</div>
 
 
 
