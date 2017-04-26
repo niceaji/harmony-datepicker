@@ -1,12 +1,16 @@
 (function ($) {
 
-  $.fn.harmonyDatetimepicker = function (opt) {
+  $.fn.datetimepicker = function (opt) {
 
-    var $wrap = $(this);
 
-    var $ymd = $wrap.find('.ymd');
-    var $hour = $wrap.find('.hour');
-    var $minute = $wrap.find('.minute');
+    if(typeof opt === 'string') {
+      debugger
+      return this.datepicker(opt);
+    }
+
+    var $ymd = this.find('.ymd');
+    var $hour = this.find('.hour');
+    var $minute = this.find('.minute');
 
     var $hourList = $hour.find('.list_opt');
     var $minuteList = $minute.find('.list_opt');
@@ -15,7 +19,7 @@
     var $hourText = $hour.find('.num_g');
     var $minuteText = $minute.find('.num_g');
 
-    var datapicker = null;
+    var $dp= null;
     var useTimepicker = $hour.length > 0 && $minute.length > 0;
 
     var options = $.extend({
@@ -97,7 +101,9 @@
       if(day < 10) {
         day = '0' + day;
       }
+      var ymd = year + '.' + month + '.' + day;
       $ymdText.text(year +'.'+ month +'.'+ day);
+      $dp.datepicker('update', 'ymd');
     }
     function setHour(hour) {
       if(!hour) {
@@ -114,7 +120,7 @@
 
     function addEvent() {
 
-      datapicker = $ymdText
+      $dp = $ymdText
         .datepicker(options)
         .on('changeDate', function (event) {
           $(event.currentTarget).html(event.format());
@@ -159,6 +165,9 @@
       setDefaultText();
     }
 
+
     init();
+
+    return $dp;
   }
 })(jQuery);
