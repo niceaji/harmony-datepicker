@@ -8,20 +8,23 @@ var options = {
   language: 'ko'
 };
 
+
 //$('#default').datepicker($.extend(options, {}));
 
 
-
-$('#harmonyDatepicker1').harmonyDatetimepicker({
+var $dp1 = $('#dp1').datetimepicker({
   defaultViewDate: { year: 2017, month: 5, day: 25, hour: 3, minute: 0 }
 });
 
 
-
-$('#harmonyDatepicker2').harmonyDatetimepicker({
+var $dp2 = $('#dp2').datetimepicker({
   defaultViewDate: { year: 2013, month: 3, day: 2 }
 });
 
-$('#harmonyDatepicker3 input').datepicker($.extend({}, options, {}) );
+var $dp3 = $('#dp3 input').datepicker($.extend({}, options, {
+  startDate: new Date()
+}));
 
-$('#harmonyDatepicker4').datepicker($.extend({}, options, {}) );
+var $dp4 = $('#dp4').datepicker($.extend({}, options, {
+
+}));
