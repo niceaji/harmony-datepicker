@@ -5,6 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp default",
+    "build": "gulp --type=production build",
     "gh-pages": "git push origin master && git subtree push --prefix . origin gh-pages"
   },
   "keywords": [],
@@ -16,10 +17,10 @@
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.0.0",
     "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglify": "^2.1.2"
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.8"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/niceaji/harmony-datepicker.git"

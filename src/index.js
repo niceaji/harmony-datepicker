@@ -3,11 +3,6 @@
   $.fn.datetimepicker = function (opt) {
 
 
-    if(typeof opt === 'string') {
-      debugger
-      return this.datepicker(opt);
-    }
-
     var $ymd = this.find('.ymd');
     var $hour = this.find('.hour');
     var $minute = this.find('.minute');
@@ -19,16 +14,30 @@
     var $hourText = $hour.find('.num_g');
     var $minuteText = $minute.find('.num_g');
 
-    var $dp= null;
+
+    if (typeof opt === 'string') {
+
+      var result = $ymdText.datepicker(opt);
+
+      if (opt === 'getDate') {
+
+        result.setHours(getHour());
+        result.setMinutes(getMinute());
+      }
+      return result;
+    }
+
+
+    var $dp = null;
     var useTimepicker = $hour.length > 0 && $minute.length > 0;
 
     var options = $.extend({
       autoclose: true,
-      format: 'yyyy.mm.dd',
+      format: 'yyyy.mm.dd.',
       todayHighlight: true,
       orientation: 'bottom auto',
       language: 'ko'
-    }, opt)
+    }, opt);
 
     var list = {
       hour: '<li><a class="link_option" data-value="0">0시</a></li>\
@@ -95,27 +104,40 @@
 
     function setYmd(year, month, day) {
       month++;
-      if(month < 10) {
+      if (month < 10) {
         month = '0' + month;
       }
-      if(day < 10) {
+      if (day < 10) {
         day = '0' + day;
       }
       var ymd = year + '.' + month + '.' + day;
-      $ymdText.text(year +'.'+ month +'.'+ day);
-      $dp.datepicker('update', 'ymd');
+      $ymdText.val(ymd + '.');
+      $dp.datepicker('update', ymd);
     }
+
     function setHour(hour) {
-      if(!hour) {
+      if (!hour) {
         hour = '0';
       }
-      $hourText.text(hour + '시');
+      $hourText.val(hour + '시');
     }
+
     function setMinute(minute) {
-      if(!minute) {
+      if (!minute) {
         minute = '0';
       }
-      $minuteText.text(minute + '분');
+      $minuteText.val(minute + '분');
+    }
+
+    //function getYmd() {
+    //  return this.datepicker.DPGlobal.formatDate(new Date(), 'yyyy.mm.dd.', 'ko');
+    //}
+    function getHour() {
+      return parseInt($hourText.val(), 10);
+    }
+
+    function getMinute() {
+      return parseInt($minuteText.val(), 10);
     }
 
     function addEvent() {
@@ -148,11 +170,12 @@
       $hourList.html(list.hour);
       $minuteList.html(list.minute);
     }
+
     function setDefaultText() {
       var date = options.defaultViewDate;
-      if(date) {
+      if (date) {
         setYmd(date.year, date.month, date.day);
-        if(useTimepicker) {
+        if (useTimepicker) {
           setHour(date.hour);
           setMinute(date.minute);
         }
@@ -168,6 +191,6 @@
 
     init();
 
-    return $dp;
+    return this;
   }
 })(jQuery);

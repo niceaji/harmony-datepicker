@@ -4,7 +4,9 @@ const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const cleanCSS = require('gulp-clean-css');
 const connect = require('gulp-connect');
+const gutil = require('gulp-util');
 
+const isProduction = gutil.env.type === 'production';
 
 gulp.task('js', function () {
   let sources = [
@@ -19,7 +21,7 @@ gulp.task('js', function () {
   return gulp.src(sources)
     .pipe(sourcemaps.init())
     .pipe(concat(filename))
-    .pipe(uglify({compress: {drop_debugger: false}}))
+    .pipe(isProduction ? uglify() : gutil.noop())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(dist));
 });
@@ -60,4 +62,5 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('default', ['js', 'css', 'connect', 'watch']);
+gulp.task('build', ['js', 'css']);
+gulp.task('default', ['build', 'connect', 'watch']);
