@@ -17,15 +17,7 @@
  * limitations under the License.
  * ========================================================= */
 
-(function(factory){
-    if (typeof define === "function" && define.amd) {
-        define(["jquery"], factory);
-    } else if (typeof exports === 'object') {
-        factory(require('jquery'));
-    } else {
-        factory(jQuery);
-    }
-}(function($, undefined){
+(function($, undefined){
 	function UTCDate(){
 		return new Date(Date.UTC.apply(Date, arguments));
 	}
@@ -1679,7 +1671,7 @@
 
 	var defaults = $.fn.datepicker.defaults = {
 		assumeNearbyYear: false,
-		autoclose: false,
+		autoclose: true,
 		beforeShowDay: $.noop,
 		beforeShowMonth: $.noop,
 		beforeShowYear: $.noop,
@@ -1693,10 +1685,10 @@
 		datesDisabled: [],
 		endDate: Infinity,
 		forceParse: true,
-		format: 'mm/dd/yyyy',
+		format: 'yyyy.mm.dd.',
 		keepEmptyValues: false,
 		keyboardNavigation: true,
-		language: 'en',
+		language: 'ko',
 		minViewMode: 0,
 		maxViewMode: 4,
 		multidate: false,
@@ -1706,7 +1698,7 @@
 		startDate: -Infinity,
 		startView: 0,
 		todayBtn: false,
-		todayHighlight: false,
+		todayHighlight: true,
 		updateViewDate: true,
 		weekStart: 0,
 		disableTouchKeyboard: false,
@@ -2036,8 +2028,8 @@
 			datepickerPlugin.call($this, 'show');
 		}
 	);
-	$(function(){
-		datepickerPlugin.call($('[data-provide="datepicker-inline"]'));
-	});
+	//$(function(){
+	//	datepickerPlugin.call($('[data-provide="datepicker-inline"]'));
+	//});
 
-}));
+})(jQuery);

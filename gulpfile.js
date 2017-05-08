@@ -10,9 +10,11 @@ const isProduction = gutil.env.type === 'production';
 
 gulp.task('js', function () {
   let sources = [
+    './src/_header.txt',
     './src/bootstrap-datepicker/bootstrap-datepicker.js',
     './src/bootstrap-datepicker/bootstrap-datepicker.ko.js',
-    './src/index.js'
+    './src/index.js',
+    './src/_footer.txt',
   ];
 
   let filename = 'harmony.datepicker.min.js';

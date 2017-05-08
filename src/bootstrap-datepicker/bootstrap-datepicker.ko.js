@@ -12,7 +12,7 @@
 		today: "오늘",
 		clear: "삭제",
 		format: "yyyy-mm-dd",
-		titleFormat: "yyyy년mm월",
+		titleFormat: "yyyy년 mm월",
 		weekStart: 0
 	};
 }(jQuery));
