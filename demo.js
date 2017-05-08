@@ -1,11 +1,11 @@
 //https://uxsolutions.github.io/bootstrap-datepicker
 
 var options = {
-  autoclose: true,
-  //orientation: 'bottom auto',
-  format: 'yyyy.mm.dd.',
-  todayHighlight: true,
-  language: 'ko'
+  //기본옵션
+  //autoclose: true,
+  //format: 'yyyy.mm.dd.',
+  //todayHighlight: true,
+  //language: 'ko'
 };
 
 
