@@ -3,6 +3,7 @@
   $.fn.datetimepicker = function (opt) {
 
 
+    var wrap = this;
     var $ymd = this.find('.ymd');
     var $hour = this.find('.hour');
     var $minute = this.find('.minute');
@@ -16,13 +17,12 @@
 
 
     if (typeof opt === 'string') {
-
-      var result = $ymdText.datepicker(opt);
-
+      var result = null;
       if (opt === 'getDate') {
-
-        result.setHours(getHour());
-        result.setMinutes(getMinute());
+        result =  getDatetime();
+      }
+      else {
+        result = $ymdText.datepicker(opt);
       }
       return result;
     }
@@ -73,6 +73,14 @@
     <li><a class="link_option" data-value="50">50분</a></li>'
     };
 
+
+    function getDatetime() {
+      var result = $ymdText.datepicker('getDate');
+      result.setHours(getHour());
+      result.setMinutes(getMinute());
+      return result;
+    }
+
     function resetLayer() {
       $hour.removeClass('on');
       $minute.removeClass('on');
@@ -94,13 +102,20 @@
       var $target = $(event.target);
       var value = $target.data('value');
       setHour(value);
+      changeTrigger();
     }
 
     function selectedMinute(event) {
       var $target = $(event.target);
       var value = $target.data('value');
       setMinute(value);
+      changeTrigger();
     }
+
+    function changeTrigger() {
+      wrap.trigger('changeTime', [getDatetime()]);
+    }
+
 
     function setYmd(year, month, day) {
       month++;
@@ -145,7 +160,8 @@
       $dp = $ymdText
         .datepicker(options)
         .on('changeDate', function (event) {
-          $(event.currentTarget).html(event.format());
+          $ymdText.html(event.format());
+          changeTrigger();
         })
         .on('show', function (event) {
 

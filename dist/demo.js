@@ -9,21 +9,25 @@ var options = {
 };
 
 
-//$('#default').datepicker($.extend(options, {}));
 
 
 var $dp1 = $('#dp1').datetimepicker({
   defaultViewDate: {year: 2017, month: 5, day: 25, hour: 3, minute: 10}
-})
+}).on('changeTime', function (event, selectedDate) {
+
+  console.log( selectedDate)
+});
+
 $('#dp1 button').click(function () {
   console.log($dp1.datetimepicker('getDate'));
 });
 
 
 //
-var $dp2 = $('#dp2 input').datepicker($.extend({}, options, {
-
-}));
+var $dp2 = $('#dp2 input').datepicker({ })
+  .on('changeDate', function (event) {
+    console.log(event.format() , event.date)
+  });
 
 $('#dp2 button').click(function () {
   console.log($dp2.datepicker('getDate'));
@@ -33,18 +37,19 @@ $('#dp2 button').click(function () {
 
 //
 
-var $dp3 = $('#dp3 input').datepicker($.extend({}, options, {
+var $dp3 = $('#dp3 input').datepicker( {
   startDate: new Date()
-}));
+}).on('changeDate', function (event) {
+  console.log(event.format() , event.date)
+});
 
 $('#dp3 button').click(function () {
-
   console.log($dp3.datepicker('getDate'));
 });
 
 //
 
-var $dp4 = $('#dp4').datepicker($.extend({}, options, {}))
+var $dp4 = $('#dp4').datepicker({})
   .on('changeDate', function(event){
     console.log(event.date)
   })
