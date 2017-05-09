@@ -187,13 +187,13 @@
       $minuteList.html(list.minute);
     }
 
-    function setDefaultText() {
-      var date = options.defaultViewDate;
+    function setInitText() {
+      var date = options.initDate;
       if (date) {
-        setYmd(date.year, date.month, date.day);
+        setYmd(date.getFullYear(), date.getMonth(), date.getDate());
         if (useTimepicker) {
-          setHour(date.hour);
-          setMinute(date.minute);
+          setHour(date.getHours());
+          setMinute(date.getMinutes());
         }
       }
     }
@@ -201,7 +201,7 @@
     function init() {
       useTimepicker && insertList();
       addEvent();
-      setDefaultText();
+      setInitText();
     }
 
 

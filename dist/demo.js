@@ -12,7 +12,7 @@ var options = {
 
 
 var $dp1 = $('#dp1').datetimepicker({
-  defaultViewDate: {year: 2017, month: 5, day: 25, hour: 3, minute: 10}
+  initDate: new Date()
 }).on('changeTime', function (event, selectedDate) {
 
   console.log( selectedDate)
