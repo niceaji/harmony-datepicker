@@ -397,6 +397,7 @@
 .datepicker .datepicker-switch {
   width: 145px;
   font-size: 14px;
+  letter-spacing: 0;
 }
 .datepicker .datepicker-switch,
 .datepicker .prev,
