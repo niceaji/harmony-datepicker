@@ -272,7 +272,6 @@
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
 .datepicker table tr td.active.disabled:hover {
-  padding-bottom: 0;
   border-radius: 16px;
   background-color: #628dcd;
   font-weight:bold;
@@ -453,7 +452,7 @@
 .datepicker.datepicker-inline th,
 .datepicker.dropdown-menu td,
 .datepicker.datepicker-inline td {
-  padding: 4px 4px;
+  padding: 4px;
 }
 .datepicker.dropdown-menu th,
 .datepicker.datepicker-inline th {
