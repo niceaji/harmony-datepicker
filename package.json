@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp default",
-    "build": "gulp --type=production build"
+    "build": "gulp --type=production build",
+    "gh-pages": "git push origin master && git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "",
