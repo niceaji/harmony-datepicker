@@ -156,15 +156,26 @@
 .datepicker table tr td.today.active:hover {
   color: #fff;
 }
+.datepicker table tr td.range:before{
+  position: absolute;
+  top: 2px;
+  left: -10px;
+  width: 47px;
+  height: 24px;
+  background-color: #eee;
+  z-index: -1;
+  content: ''
+} /* 2017-08-02 수정 */
 .datepicker table tr td.range,
 .datepicker table tr td.range:hover,
 .datepicker table tr td.range.disabled,
 .datepicker table tr td.range.disabled:hover {
-  background: #eee;
+  position: relative;
+  /*background: #eee;*/
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-}
+} /* 2017-08-02 수정 */
 .datepicker table tr td.range.today,
 .datepicker table tr td.range.today:hover,
 .datepicker table tr td.range.today.disabled,
@@ -221,21 +232,21 @@
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected.disabled,
 .datepicker table tr td.selected.disabled:hover {
-  background-color: #9e9e9e;
-  background-image: -moz-linear-gradient(to bottom, #b3b3b3, #808080);
+  background-color: #628dcd;
+  /* background-image: -moz-linear-gradient(to bottom, #b3b3b3, #808080);
   background-image: -ms-linear-gradient(to bottom, #b3b3b3, #808080);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b3b3b3), to(#808080));
   background-image: -webkit-linear-gradient(to bottom, #b3b3b3, #808080);
   background-image: -o-linear-gradient(to bottom, #b3b3b3, #808080);
   background-image: linear-gradient(to bottom, #b3b3b3, #808080);
-  background-repeat: repeat-x;
+  background-repeat: repeat-x; */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3', endColorstr='#808080', GradientType=0);
   border-color: #808080 #808080 #595959;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-}
+} /* 2017-08-02 수정 */
 .datepicker table tr td.selected:hover,
 .datepicker table tr td.selected:hover:hover,
 .datepicker table tr td.selected.disabled:hover,
@@ -256,8 +267,8 @@
 .datepicker table tr td.selected:hover[disabled],
 .datepicker table tr td.selected.disabled[disabled],
 .datepicker table tr td.selected.disabled:hover[disabled] {
-  background-color: #808080;
-}
+  background-color: #628dcd;
+} /* 2017-08-02 수정 */
 .datepicker table tr td.selected:active,
 .datepicker table tr td.selected:hover:active,
 .datepicker table tr td.selected.disabled:active,
@@ -268,6 +279,8 @@
 .datepicker table tr td.selected.disabled:hover.active {
   background-color: #666666 \9;
 }
+.datepicker table tr td.selected,
+.datepicker table tr td.selected:hover,
 .datepicker table tr td.active,
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
@@ -277,7 +290,7 @@
   font-weight:bold;
   font-family: 'roboto', helvetica, sans-serif;
   color: #fff;
-}
+} /* 2017-08-02 수정 */
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active:hover:hover,
 .datepicker table tr td.active.disabled:hover,
